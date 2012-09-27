@@ -102,7 +102,8 @@ class MyPanel():
 			tr.set_tag_raw("album", "Vkontakte.ru")
 			myTrack.append(tr)
 		if not wget:
-			playlist_handle.add_tracks(myTrack, None)
+			for tr in myTrack:
+				playlist_handle.append(tr)
 		else:
 			for i in mysel:
 				path = settings.get_option("vk_exaile/path", os.getenv("HOME"))
